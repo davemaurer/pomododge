@@ -21,10 +21,10 @@ describe('addTomato', function () {
   it('should add a new tomato to its tomato array', function () {
     let playfield = new Playfield();
 
-    assert.equal(playfield.tomatoes.count, 0);
+    assert.equal(playfield.tomatoes.length, 0);
 
     playfield.addTomato(-5, -5);
 
-    assert.equal(playfield.tomatoes.count, 1);
+    assert.equal(playfield.tomatoes.length, 1);
   })
 });
