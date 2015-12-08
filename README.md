@@ -1,3 +1,7 @@
+# Pomododge
+
+## A game playable in the browser where the player moves a face around the board, trying to dodge tomatoes being thrown at them from the audience.
+
 # Game Time Starter Kit
 
 To install the dependencies:
