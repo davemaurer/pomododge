@@ -4,16 +4,24 @@ const Playfield = require('../lib/playfield'); //can leave off the .js, just lik
 
 
 describe('Playfield', function() {
-  it('should instantiate a new playfield', function () {
-    let playfield = new Playfield();
+  beforeEach(function () {
+    this.playfield = new Playfield();
+  });
 
-    assert.isObject(playfield);
+  it('should instantiate a new playfield', function () {
+    assert.isObject(this.playfield);
+  });
+
+  it('should have a height', function () {
+    assert.equal(this.playfield.height, 600)
+  });
+
+  it('should have a height', function () {
+    assert.equal(this.playfield.width, 1200)
   });
 
   it('should start with an array of tomatoes', function () {
-    let playfield = new Playfield();
-
-    assert.isArray(playfield.tomatoes);
+    assert.isArray(this.playfield.tomatoes);
   });
 });
 
