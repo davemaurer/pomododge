@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/davemaurer/pomododge.png?label=ready&title=Ready)](https://waffle.io/davemaurer/pomododge)
 # Pomododge
 
 ## A game playable in the browser where the player moves a face around the board, trying to dodge tomatoes being thrown at them from the audience.
