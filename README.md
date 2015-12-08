@@ -4,6 +4,8 @@
 
 # Game Time Starter Kit
 
+[Link to Rubric and specifications!](RUBRIC.md)
+
 To install the dependencies:
 
 ```
