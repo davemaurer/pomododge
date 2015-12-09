@@ -9,25 +9,25 @@ describe('face', function () {
   });
 
   it('should have a reference to the playfield', function () {
-    let face = this.playfield.face;
+    let face = new Face(this.playfield);
 
     assert.equal(face.playfield, this.playfield)
   });
 
   it('should have an x-coordinate', function () {
-    let face = new Face(this.playfield, 300, 400);
+    let face = new Face(this.playfield);
 
-    assert.strictEqual(face.x, 300)
+    assert.strictEqual(face.center.x, 400)
   });
 
   it('should have a y-coordinate', function () {
-    let face = new Face(this.playfield, 300, 400);
+    let face = new Face(this.playfield);
 
-    assert.strictEqual(face.y, 400);
+    assert.strictEqual(face.center.y, 300);
   });
 
   it('should be a property on the playfield', function () {
-    let face = this.playfield.face;
+    let face = new Face(this.playfield);
 
     assert.isObject(this.playfield.face);
     assert.equal(face.playfield, this.playfield);
