@@ -14,13 +14,13 @@ describe('Tomato', function () {
     assert.equal(tomato.playfield, this.playfield);
   });
 
-  it('should have an X-coord', function () {
+  it('should have an x-coordinate', function () {
     let tomato = new Tomato(this.playfield, 5, 5);
 
     assert.strictEqual(tomato.x, 5);
   });
 
-  it('should have a Y-coord', function () {
+  it('should have a y-coordinate', function () {
     let tomato = new Tomato(this.playfield, 5, 5);
 
     assert.strictEqual(tomato.y, 5);

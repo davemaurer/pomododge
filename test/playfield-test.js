@@ -1,19 +1,27 @@
 const chai = require('chai');
 const assert = chai.assert;
-const Playfield = require('../lib/playfield'); //can leave off the .js, just like in ruby
+const Playfield = require('../lib/playfield');
 
 
-describe('Playfield', function() {
+describe('Playfield', function () {
+  beforeEach(function () {
+    this.playfield = new Playfield(800, 600);
+  });
+
   it('should instantiate a new playfield', function () {
-    let playfield = new Playfield();
+    assert.isObject(this.playfield);
+  });
 
-    assert.isObject(playfield);
+  it('should have a height', function () {
+    assert.equal(this.playfield.height, 600)
+  });
+
+  it('should have a height', function () {
+    assert.equal(this.playfield.width, 800)
   });
 
   it('should start with an array of tomatoes', function () {
-    let playfield = new Playfield();
-
-    assert.isArray(playfield.tomatoes);
+    assert.isArray(this.playfield.tomatoes);
   });
 });
 
