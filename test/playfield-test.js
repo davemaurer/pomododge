@@ -3,7 +3,7 @@ const assert = chai.assert;
 const Playfield = require('../lib/playfield');
 
 
-describe('Playfield', function() {
+describe('Playfield', function () {
   beforeEach(function () {
     this.playfield = new Playfield(800, 600);
   });
