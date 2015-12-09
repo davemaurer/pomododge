@@ -5,7 +5,7 @@ const Face = require('../lib/face');
 
 describe('face', function () {
   beforeEach(function() {
-    this.playfield = new Playfield(800, 600);
+    this.playfield = new Playfield({ x: 800, y: 600 });
   });
 
   it('should have a reference to the playfield', function () {

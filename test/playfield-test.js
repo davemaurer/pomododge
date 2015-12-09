@@ -5,7 +5,7 @@ const Playfield = require('../lib/playfield');
 
 describe('Playfield', function () {
   beforeEach(function () {
-    this.playfield = new Playfield(800, 600);
+    this.playfield = new Playfield({ x: 800, y: 600 });
   });
 
   it('should instantiate a new playfield', function () {
@@ -27,7 +27,7 @@ describe('Playfield', function () {
 
 describe('addTomato', function () {
   it('should add a new tomato to its tomato array', function () {
-    let playfield = new Playfield();
+    let playfield = new Playfield({ x: 800, y: 600 });
 
     assert.equal(playfield.tomatoes.length, 0);
 

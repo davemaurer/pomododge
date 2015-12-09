@@ -5,7 +5,7 @@ const Tomato = require('../lib/tomato');
 
 describe('Tomato', function () {
   beforeEach(function () {
-    this.playfield = new Playfield();
+    this.playfield = new Playfield({ x: 800, y: 600 });
   });
 
   it('should have a reference to the playfield', function () {
