@@ -25,11 +25,4 @@ describe('face', function () {
 
     assert.strictEqual(face.center.y, 300);
   });
-
-  it('should be a property on the playfield', function () {
-    let face = new Face(this.playfield);
-
-    assert.isObject(this.playfield.face);
-    assert.equal(face.playfield, this.playfield);
-  });
 });
