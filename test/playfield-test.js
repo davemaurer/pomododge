@@ -19,20 +19,5 @@ describe('Playfield', function () {
   it('should have a height', function () {
     assert.equal(this.playfield.width, 800)
   });
-
-  it('should start with an array of tomatoes', function () {
-    assert.isArray(this.playfield.tomatoes);
-  });
 });
 
-describe('addTomato', function () {
-  it('should add a new tomato to its tomato array', function () {
-    let playfield = new Playfield({ x: 800, y: 600 });
-
-    assert.equal(playfield.tomatoes.length, 0);
-
-    playfield.addTomato(-5, -5);
-
-    assert.equal(playfield.tomatoes.length, 1);
-  })
-});

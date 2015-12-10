@@ -15,20 +15,20 @@ describe('Tomato', function () {
   });
 
   it('should have an x-coordinate', function () {
-    let tomato = new Tomato(this.playfield, 5, 5);
+    let tomato = new Tomato(this.playfield, {x: 50, y: 50});
 
-    assert.strictEqual(tomato.x, 5);
+    assert.strictEqual(tomato.center.x, 50);
   });
 
   it('should have a y-coordinate', function () {
-    let tomato = new Tomato(this.playfield, 5, 5);
+    let tomato = new Tomato(this.playfield, {x: 50, y: 50});
 
-    assert.strictEqual(tomato.y, 5);
+    assert.strictEqual(tomato.center.y, 50);
   });
 
-  it('should be included in the playfield\'s array of tomatoes', function () {
-    let tomato = new Tomato(this.playfield, 5, 5);
+  it('should be included in the game array of tomatoes', function () {
+    let tomato = new Tomato(this.playfield, {x: 50, y: 50});
 
-    assert.include(this.playfield.tomatoes, tomato);
+    assert.include(this.game.tomatoes, tomato);
   });
 });
