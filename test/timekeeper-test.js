@@ -11,29 +11,37 @@ describe('timekeeper', function () {
   });
 
   it('should initialize with 0 minutes, 0 seconds, 0 milliseconds', function() {
-    let timekeeper = Timekeeper.new();
+    let timekeeper = new Timekeeper();
 
     assert.equal(0, timekeeper.minutes);
     assert.equal(0, timekeeper.seconds);
-    assert.equal(0, timekeeper.milliseconds);
+    assert.equal(0, timekeeper.millisecs);
   });
 
   it('begins existence inactive', function() {
-    assert.not(timekeeper.active);
+    let timekeeper = new Timekeeper();
+
+    assert(!timekeeper.active);
   });
 
   it('returns its counted time as a string with textify', function() {
-    let timekeeper = Timekeeper.new();
+    let timekeeper = new Timekeeper();
 
     assert.equal("00:00.000", timekeeper.textify());
   })
 
   it('assumes a rate of 60FPS or 17 milliseconds per frame when updating time', function() {
-    let timekeeper = Timekeeper.new();
+    let timekeeper = new Timekeeper();
 
-    assert.equal(0, timekeeper.milliseconds);
+    assert.equal(0, timekeeper.millisecs);
     timekeeper.updateTime();
-    assert.equal(17, timekeeper.milliseconds);
+    assert.equal(17, timekeeper.millisecs);
     assert.equal("00:00.017", timekeeper.textify());
+  });
+
+  it('adds itself to the page', function() {
+    let timekeeper = new Timekeeper();
+
+    assert.
   });
 });
