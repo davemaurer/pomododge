@@ -2,10 +2,13 @@ const chai = require('chai');
 const assert = chai.assert;
 const Playfield = require('../lib/playfield');
 
-
 describe('Playfield', function () {
   beforeEach(function () {
-    this.playfield = new Playfield({ x: 800, y: 600 });
+    var canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 600;
+    var context = canvas.getContext('2d');
+    this.playfield = new Playfield( this.context = context );
   });
 
   it('should instantiate a new playfield', function () {
