@@ -8,7 +8,7 @@ describe('Playfield', function () {
     canvas.width = 800;
     canvas.height = 600;
     var context = canvas.getContext('2d');
-    this.playfield = new Playfield( this.context = context );
+    this.playfield = new Playfield( context, canvas.width, canvas.height );
   });
 
   it('should instantiate a new playfield', function () {

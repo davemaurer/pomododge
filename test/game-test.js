@@ -9,7 +9,7 @@ describe('Game', function() {
       this.canvas.width = 800;
       this.canvas.height = 600;
       this.context = this.canvas.getContext('2d');
-      this.game = new Game();
+      this.game = new Game(this.canvas, this.context);
     });
   });
 
@@ -18,26 +18,25 @@ describe('Game', function() {
   });
 
   it('should start with an array of tomatoes', function() {
-    assert.isArray(this.playfield.tomatoes);
+    assert.isArray(this.tomatoes);
 });
 
 describe('addTomato', function() {
   beforeEach(function() {
-    $(document).ready(function() {
-      this.game = function() {
-        this.canvasElement = {width: "800", height: "600"};
-        this.context = this.canvasElement.getContext('2d');
-         this.game.start();
-      };
-    });
+    this.canvas = document.createElement('canvas');
+    this.canvas.width = 800;
+    this.canvas.height = 600;
+    this.context = this.canvas.getContext('2d');
+    this.game = new Game(this.canvas, this.context);
   });
 
   it('should add a new tomato to its tomato array', function() {
 
-    assert.equal(game.tomatoes.length, 0);
+    assert.equal(this.game.tomatoes.length, 0);
 
-    game.addTomato(-5, -5);
+    this.game.addTomato(-5, -5);
 
-    assert.equal(game.tomatoes.length, 1);
+    assert.equal(this.game.tomatoes.length, 1);
   })
 });
+
