@@ -11,16 +11,12 @@ describe('Playfield', function () {
     this.playfield = new Playfield( context, canvas.width, canvas.height );
   });
 
-  it('should instantiate a new playfield', function () {
-    assert.isObject(this.playfield);
+  it('should have a width', function () {
+    assert.equal(this.playfield.width, 800)
   });
 
   it('should have a height', function () {
     assert.equal(this.playfield.height, 600)
-  });
-
-  it('should have a height', function () {
-    assert.equal(this.playfield.width, 800)
   });
 });
 

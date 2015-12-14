@@ -5,12 +5,11 @@ const Game = require('../lib/game');
 
 describe('Game', function() {
   beforeEach(function () {
-      this.canvas = document.createElement('canvas');
-      this.canvas.width = 800;
-      this.canvas.height = 600;
-      this.context = this.canvas.getContext('2d');
-      this.game = new Game(this.canvas, this.context);
-    });
+    var canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 600;
+    var context = canvas.getContext('2d');
+    this.game = new Game(canvas, context);
   });
 
   it('instantiates with a playfield', function () {
@@ -18,25 +17,25 @@ describe('Game', function() {
   });
 
   it('should start with an array of tomatoes', function() {
-    assert.isArray(this.tomatoes);
-});
-
-describe('addTomato', function() {
-  beforeEach(function() {
-    this.canvas = document.createElement('canvas');
-    this.canvas.width = 800;
-    this.canvas.height = 600;
-    this.context = this.canvas.getContext('2d');
-    this.game = new Game(this.canvas, this.context);
+    assert.isArray(this.game.tomatoes);
   });
 
-  it('should add a new tomato to its tomato array', function() {
+  describe('addTomato', function() {
+    beforeEach(function() {
+      var canvas = document.createElement('canvas');
+      canvas.width = 800;
+      canvas.height = 600;
+      var context = canvas.getContext('2d');
+      this.game = new Game(canvas, context);
+    });
 
-    assert.equal(this.game.tomatoes.length, 0);
+    it('should add a new tomato to its tomato array', function() {
 
-    this.game.addTomato(-5, -5);
+      assert.equal(this.game.tomatoes.length, 0);
 
-    assert.equal(this.game.tomatoes.length, 1);
-  })
+      this.game.addTomato();
+
+      assert.equal(this.game.tomatoes.length, 1);
+    })
+  });
 });
-

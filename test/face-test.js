@@ -4,24 +4,22 @@ const Face = require('../lib/face');
 
 describe('face', function () {
   beforeEach(function() {
-
-  });
-
-  it('should have a reference to the playfield', function () {
-    let face = new Face(this.playfield);
-
-    assert.equal(face.playfield, this.playfield)
-  });
+      var canvas = document.createElement('canvas');
+      canvas.width = 800;
+      canvas.height = 600;
+      var context = canvas.getContext('2d');
+      this.face = new Face(context,{ x: 400, y: 300} )
+    });
 
   it('should have an x-coordinate', function () {
-    let face = new Face(this.playfield);
-
-    assert.strictEqual(face.center.x, 400)
+    assert.strictEqual(this.face.center.x, 400)
   });
 
   it('should have a y-coordinate', function () {
-    let face = new Face(this.playfield);
-
-    assert.strictEqual(face.center.y, 300);
+    assert.strictEqual(this.face.center.y, 300);
   });
+
+  it('should have a size', function () {
+    assert.strictEqual(this.face.size, 30)
+  })
 });

@@ -5,33 +5,35 @@ const Game = require('../lib/game');
 
 describe('Tomato', function () {
   beforeEach(function () {
-
+    var canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 600;
+    context = canvas.getContext('2d');
+    this.game = new Game(canvas, context);
+    this.tomato1 = new Tomato(context, {x: (canvas.width - 300), y: (canvas.height - 500)});
   });
 
   it('should have an x-coordinate', function () {
-    let tomato = new Tomato(this.playfield, {x: 50, y: 50});
 
-    assert.strictEqual(tomato.center.x, 50);
+    assert.strictEqual(this.tomato1.center.x, 500);
   });
 
   it('should have a y-coordinate', function () {
-    let tomato = new Tomato(this.playfield, {x: 50, y: 50});
 
-    assert.strictEqual(tomato.center.y, 50);
+    assert.strictEqual(this.tomato1.center.y, 100);
   });
 
   it('should be included in the game array of tomatoes', function () {
-    this.canvas = document.createElement('canvas');
-    this.canvas.width = 800;
-    this.canvas.height = 600;
-    this.context = this.canvas.getContext('2d');
-    this.game = new Game(this.canvas, this.context);
-    console.log(this.game);
+    var canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 600;
+    context = canvas.getContext('2d');
+    this.game = new Game(canvas, context);
 
-    let tomato1 = new Tomato(this.context, {x: (this.canvas.width - 300), y: (this.canvas.height - 500)});
+    let tomato1 = new Tomato(context, {x: (canvas.width - 300), y: (canvas.height - 500)});
 
     this.game.tomatoes.push(tomato1);
 
-    assert.include(this.game.tomatoes, tomato);
+    assert.include(this.game.tomatoes, tomato1);
   });
 });
