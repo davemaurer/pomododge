@@ -38,10 +38,4 @@ describe('timekeeper', function () {
     assert.equal(17, timekeeper.millisecs);
     assert.equal("00:00.017", timekeeper.textify());
   });
-
-  it('adds itself to the page', function() {
-    let timekeeper = new Timekeeper();
-
-    assert.
-  });
 });

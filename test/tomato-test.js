@@ -1,34 +1,36 @@
 const chai = require('chai');
 const assert = chai.assert;
-const Playfield = require('../lib/playfield');
 const Tomato = require('../lib/tomato');
+const Game = require('../lib/game');
 
 describe('Tomato', function () {
   beforeEach(function () {
-    this.playfield = new Playfield();
-  });
-
-  it('should have a reference to the playfield', function () {
-    let tomato = new Tomato(this.playfield);
-
-    assert.equal(tomato.playfield, this.playfield);
+    var canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 600;
+    context = canvas.getContext('2d');
+    this.game = new Game(canvas, context);
+    this.tomato1 = new Tomato(context, {x: (canvas.width - 300), y: (canvas.height - 500)});
   });
 
   it('should have an x-coordinate', function () {
-    let tomato = new Tomato(this.playfield, 5, 5);
-
-    assert.strictEqual(tomato.x, 5);
+    assert.strictEqual(this.tomato1.center.x, 500);
   });
 
   it('should have a y-coordinate', function () {
-    let tomato = new Tomato(this.playfield, 5, 5);
-
-    assert.strictEqual(tomato.y, 5);
+    assert.strictEqual(this.tomato1.center.y, 100);
   });
 
-  it('should be included in the playfield\'s array of tomatoes', function () {
-    let tomato = new Tomato(this.playfield, 5, 5);
+  it('should be included in the game array of tomatoes', function () {
+    var canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 600;
+    context = canvas.getContext('2d');
+    this.game = new Game(canvas, context);
+    let tomato1 = new Tomato(context, {x: (canvas.width - 300), y: (canvas.height - 500)});
 
-    assert.include(this.playfield.tomatoes, tomato);
+    this.game.tomatoes.push(tomato1);
+
+    assert.include(this.game.tomatoes, tomato1);
   });
 });

@@ -1,35 +1,57 @@
 const chai = require('chai');
 const assert = chai.assert;
-const Playfield = require('../lib/playfield');
 const Face = require('../lib/face');
 
 describe('face', function () {
   beforeEach(function() {
-    this.playfield = new Playfield(800, 600);
-  });
-
-  it('should have a reference to the playfield', function () {
-    let face = new Face(this.playfield);
-
-    assert.equal(face.playfield, this.playfield)
-  });
+      var canvas = document.createElement('canvas');
+      canvas.width = 800;
+      canvas.height = 600;
+      var context = canvas.getContext('2d');
+      this.face = new Face(context,{ x: 400, y: 300} )
+    });
 
   it('should have an x-coordinate', function () {
-    let face = new Face(this.playfield);
-
-    assert.strictEqual(face.center.x, 400)
+    assert.strictEqual(this.face.center.x, 400)
   });
 
   it('should have a y-coordinate', function () {
-    let face = new Face(this.playfield);
-
-    assert.strictEqual(face.center.y, 300);
+    assert.strictEqual(this.face.center.y, 300);
   });
 
-  it('should be a property on the playfield', function () {
-    let face = new Face(this.playfield);
-
-    assert.isObject(this.playfield.face);
-    assert.equal(face.playfield, this.playfield);
+  it('should have a size', function () {
+    assert.strictEqual(this.face.size, 30)
   });
+
+  it('should be able to move left', function () {
+    assert.equal(this.face.center.x, 400);
+
+    this.face.moveLeft();
+
+    assert.equal(this.face.center.x, 399)
+  });
+
+  it('should be able to move right', function () {
+    assert.equal(this.face.center.x, 400);
+
+    this.face.moveRight();
+
+    assert.equal(this.face.center.x, 401)
+  });
+
+  it('should be able to move up', function () {
+    assert.equal(this.face.center.y, 300);
+
+    this.face.moveUp();
+
+    assert.equal(this.face.center.y, 299)
+  });
+
+  it('should be able to move down', function () {
+    assert.equal(this.face.center.y, 300);
+
+    this.face.moveDown();
+
+    assert.equal(this.face.center.y, 301)
+  })
 });
