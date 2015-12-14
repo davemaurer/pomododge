@@ -16,6 +16,10 @@ describe('Game', function() {
     assert.isObject(this.game.playfield);
   });
 
+  it('instantiates with a face', function () {
+    assert.isObject(this.game.face);
+  });
+
   it('should start with an array of tomatoes', function() {
     assert.isArray(this.game.tomatoes);
   });

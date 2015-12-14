@@ -21,5 +21,37 @@ describe('face', function () {
 
   it('should have a size', function () {
     assert.strictEqual(this.face.size, 30)
+  });
+
+  it('should be able to move left', function () {
+    assert.equal(this.face.center.x, 400);
+
+    this.face.moveLeft();
+
+    assert.equal(this.face.center.x, 399)
+  });
+
+  it('should be able to move right', function () {
+    assert.equal(this.face.center.x, 400);
+
+    this.face.moveRight();
+
+    assert.equal(this.face.center.x, 401)
+  });
+
+  it('should be able to move up', function () {
+    assert.equal(this.face.center.y, 300);
+
+    this.face.moveUp();
+
+    assert.equal(this.face.center.y, 299)
+  });
+
+  it('should be able to move down', function () {
+    assert.equal(this.face.center.y, 300);
+
+    this.face.moveDown();
+
+    assert.equal(this.face.center.y, 301)
   })
 });
