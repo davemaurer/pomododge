@@ -4,12 +4,18 @@
   <meta charset="utf-8">
   <title>Pomododge</title>
   <link rel="stylesheet" type="text/css" href="playfield.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
+  <div id="welcome">
+    <div class="banner"><h2>Welcome to Pomododge!</h2>
+    <h4>Use the arrow keys to move the face and avoid the tomatoes. Hit start to play!</h4></div>
+    <button class="button" id="start-button">Start</button>
+  </div>
+  <canvas id="play-field" width="800" height="600"></canvas>
 	<div id="timekeeper">
 		<h4 id="inner-timekeeper"></h4>
 	</div>
-  <canvas id="play-field" width="800" height="600"></canvas>
   <script src="main.bundle.js"></script>
 </body>
 </html>
