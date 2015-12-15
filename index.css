@@ -1,0 +1,22 @@
+.button {
+  background-color: red;
+  border: none;
+  padding: 1em;
+  color: white;
+}
+
+.button:hover {
+  background-color: darkred;
+}
+
+.banner {
+  display: inline;
+}
+
+h2 {
+  display: inline;
+}
+
+h4 {
+  display: inline;
+}
