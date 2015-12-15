@@ -2,6 +2,7 @@ const $ = require('jquery');
 const chai = require('chai');
 const assert = chai.assert;
 const Game = require('../lib/game');
+const Tomato = require('../lib/tomato');
 
 describe('Game', function() {
   beforeEach(function () {
@@ -35,11 +36,11 @@ describe('Game', function() {
 
     it('should add a new tomato to its tomato array', function() {
 
-      assert.equal(this.game.tomatoes.length, 0);
-
-      this.game.addTomato();
-
       assert.equal(this.game.tomatoes.length, 1);
+
+      this.game.addTomato(new Tomato(context, {x: (300), y: (500)}));
+
+      assert.equal(this.game.tomatoes.length, 2);
     })
   });
 });
