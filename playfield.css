@@ -3,4 +3,5 @@ canvas {
   top: 10%;
   left: 50%;
   margin-left: -400px;
+  border: 5px solid black;
 }
