@@ -12,9 +12,15 @@
     <h4>Use the arrow keys to move the face and avoid the tomatoes. Hit start to play!</h4></div>
     <button class="button" id="start-button">Start</button>
   </div>
+
+  <div id="ending">
+    <div class="banner">Game Over: You lasted <span class="timer"></span></div>
+    <button class="button" id="replay-button">Replay</button>
+  </div>
+
   <canvas id="play-field" width="800" height="600"></canvas>
 	<div id="timekeeper">
-		<h4 id="inner-timekeeper"></h4>
+		<h4 class="timer"></h4>
 	</div>
   <script src="main.bundle.js"></script>
 </body>

@@ -10,7 +10,11 @@ describe('Tomato', function () {
     canvas.height = 600;
     context = canvas.getContext('2d');
     this.game = new Game(canvas, context);
-    this.tomato1 = new Tomato(context, {x: (canvas.width - 300), y: (canvas.height - 500)});
+    this.tomato1 = new Tomato(context);
+    this.tomato1.center.x = 500;
+    this.tomato1.center.y = 100;
+    this.tomato1.direction = 0;
+    this.tomato1.speed = 3;
   });
 
   it('should have an x-coordinate', function () {

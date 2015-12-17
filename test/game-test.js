@@ -35,12 +35,20 @@ describe('Game', function() {
     });
 
     it('should add a new tomato to its tomato array', function() {
+      assert.equal(this.game.tomatoes.length, 0);
+
+      this.game.addTomato();
 
       assert.equal(this.game.tomatoes.length, 1);
+    });
 
-      this.game.addTomato(new Tomato(context, {x: (300), y: (500)}));
+    it('should load its tomatoes array', function() {
+      this.game.tomatoCounter = 3;
+      assert.equal(this.game.tomatoes.length, 0);
 
-      assert.equal(this.game.tomatoes.length, 2);
+      this.game.loadTomatoes();
+
+      assert.equal(this.game.tomatoes.length, 3)
     })
   });
 });
