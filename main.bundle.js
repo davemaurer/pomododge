@@ -60,6 +60,7 @@
 	  var timekeeper = new Timekeeper('.timer');
 	  $('#ending').hide();
 	  game.renderUniverse();
+	  game.gameSound.load();
 	  $('#start-button').on('click', function () {
 	    $('#welcome').toggle();
 	    game.start();
@@ -9337,7 +9338,6 @@
 	      //keys[event.which] = true;
 	      keys[event.keyCode].bind(face)();
 	    }
-	    this.gameSound.load();
 	    this.gameSound.play();
 	  }
 	};

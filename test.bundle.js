@@ -9313,7 +9313,6 @@
 	      //keys[event.which] = true;
 	      keys[event.keyCode].bind(face)();
 	    }
-	    this.gameSound.load();
 	    this.gameSound.play();
 	  }
 	};
